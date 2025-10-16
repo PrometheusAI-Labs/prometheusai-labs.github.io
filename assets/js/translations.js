@@ -41,7 +41,31 @@ const translations = {
     // Language switcher
     langSwitch: "Language",
     langRu: "Русский",
-    langEn: "English"
+    langEn: "English",
+    langZh: "中文"
+  },
+  
+  zh: {
+    // Meta
+    title: "IT领域，AI工作室 Prometheus AI™：在业务流程中实施人工智能：自动化、聊天机器人、定制AI工具",
+    description: "IT领域，AI工作室 Prometheus AI™：在业务流程中实施人工智能：自动化、聊天机器人、定制AI工具。",
+    
+    // Header
+    brandAriaLabel: "Prometheus AI — 返回首页",
+    socialAriaLabel: "社交链接",
+    
+    // Hero section
+    heroTitle: "IT领域，AI工作室 Prometheus AI™",
+    heroLead: "在业务流程中实施人工智能：自动化、聊天机器人、定制AI工具。",
+    
+    // Footer
+    footerCopyright: "© 2025 Prometheus AI™. 版权所有。",
+    
+    // Language switcher
+    langSwitch: "语言",
+    langRu: "Русский",
+    langEn: "English",
+    langZh: "中文"
   }
 };
 
@@ -56,7 +80,7 @@ function detectBrowserLanguage() {
   const langCode = browserLang.split('-')[0]; // Получаем только код языка (ru, en, etc.)
   
   // Поддерживаемые языки
-  const supportedLangs = ['ru', 'en'];
+  const supportedLangs = ['ru', 'en', 'zh'];
   
   // Если язык браузера поддерживается, используем его, иначе русский по умолчанию
   return supportedLangs.includes(langCode) ? langCode : 'ru';
