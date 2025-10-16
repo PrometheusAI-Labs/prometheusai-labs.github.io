@@ -19,7 +19,27 @@ const translations = {
     // Language switcher
     langSwitch: "Язык",
     langRu: "Русский",
-    langEn: "English"
+    langEn: "English",
+    langZh: "中文",
+    
+    // Navigation
+    navHome: "Главная",
+    navPortfolio: "Портфолио",
+    
+    // Portfolio
+    portfolioTitle: "Портфолио проектов",
+    portfolioLead: "Примеры внедрения искусственного интеллекта в бизнес-процессы наших клиентов.",
+    filterAll: "Все проекты",
+    filterAutomation: "Автоматизация",
+    filterChatbots: "Чат-боты",
+    filterAiTools: "AI-инструменты",
+    technologies: "Технологии:",
+    viewDemo: "Демо",
+    viewCode: "Код",
+    viewCase: "Кейс",
+    loading: "Загрузка проектов...",
+    error: "Ошибка загрузки проектов",
+    noProjects: "Проекты не найдены"
   },
   
   en: {
@@ -42,7 +62,26 @@ const translations = {
     langSwitch: "Language",
     langRu: "Русский",
     langEn: "English",
-    langZh: "中文"
+    langZh: "中文",
+    
+    // Navigation
+    navHome: "Home",
+    navPortfolio: "Portfolio",
+    
+    // Portfolio
+    portfolioTitle: "Project Portfolio",
+    portfolioLead: "Examples of AI implementation in our clients' business processes.",
+    filterAll: "All Projects",
+    filterAutomation: "Automation",
+    filterChatbots: "Chatbots",
+    filterAiTools: "AI Tools",
+    technologies: "Technologies:",
+    viewDemo: "Demo",
+    viewCode: "Code",
+    viewCase: "Case Study",
+    loading: "Loading projects...",
+    error: "Error loading projects",
+    noProjects: "No projects found"
   },
   
   zh: {
@@ -65,7 +104,26 @@ const translations = {
     langSwitch: "语言",
     langRu: "Русский",
     langEn: "English",
-    langZh: "中文"
+    langZh: "中文",
+    
+    // Navigation
+    navHome: "首页",
+    navPortfolio: "作品集",
+    
+    // Portfolio
+    portfolioTitle: "项目作品集",
+    portfolioLead: "我们客户业务流程中人工智能实施示例。",
+    filterAll: "所有项目",
+    filterAutomation: "自动化",
+    filterChatbots: "聊天机器人",
+    filterAiTools: "AI工具",
+    technologies: "技术栈：",
+    viewDemo: "演示",
+    viewCode: "代码",
+    viewCase: "案例研究",
+    loading: "加载项目中...",
+    error: "加载项目时出错",
+    noProjects: "未找到项目"
   }
 };
 
