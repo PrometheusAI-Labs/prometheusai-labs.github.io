@@ -37,6 +37,8 @@ const translations = {
     viewDemo: "Демо",
     viewCode: "Код",
     viewCase: "Кейс",
+    viewDetails: "Подробнее",
+    projectResults: "Результаты проекта:",
     loading: "Загрузка проектов...",
     error: "Ошибка загрузки проектов",
     noProjects: "Проекты не найдены"
@@ -79,6 +81,8 @@ const translations = {
     viewDemo: "Demo",
     viewCode: "Code",
     viewCase: "Case Study",
+    viewDetails: "View Details",
+    projectResults: "Project Results:",
     loading: "Loading projects...",
     error: "Error loading projects",
     noProjects: "No projects found"
@@ -121,6 +125,8 @@ const translations = {
     viewDemo: "演示",
     viewCode: "代码",
     viewCase: "案例研究",
+    viewDetails: "查看详情",
+    projectResults: "项目成果：",
     loading: "加载项目中...",
     error: "加载项目时出错",
     noProjects: "未找到项目"

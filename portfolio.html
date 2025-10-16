@@ -69,6 +69,71 @@
     </section>
   </main>
 
+  <!-- Модальное окно для полноэкранного просмотра проекта -->
+  <div class="project-modal" id="projectModal">
+    <div class="project-modal-overlay" id="projectModalOverlay"></div>
+    <div class="project-modal-content">
+      <button class="project-modal-close" id="projectModalClose" aria-label="Закрыть модальное окно">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <div class="project-modal-header">
+        <div class="project-modal-category" id="projectModalCategory"></div>
+        <h2 class="project-modal-title" id="projectModalTitle"></h2>
+        <div class="project-modal-meta">
+          <span class="project-modal-year" id="projectModalYear"></span>
+          <span class="project-modal-client" id="projectModalClient"></span>
+        </div>
+      </div>
+      
+      <div class="project-modal-body">
+        <div class="project-modal-image-container">
+          <img class="project-modal-image" id="projectModalImage" alt="Изображение проекта">
+        </div>
+        
+        <div class="project-modal-description" id="projectModalDescription"></div>
+        
+        <div class="project-modal-results" id="projectModalResults">
+          <h3 data-i18n="projectResults">Результаты проекта:</h3>
+          <p id="projectModalResultsText"></p>
+        </div>
+        
+        <div class="project-modal-technologies" id="projectModalTechnologies">
+          <h3 data-i18n="technologies">Технологии:</h3>
+          <div class="project-modal-tech-list" id="projectModalTechList"></div>
+        </div>
+        
+        <div class="project-modal-links">
+          <a href="#" class="project-modal-link" id="projectModalDemo" target="_blank" rel="noopener" data-i18n="viewDemo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5,3 19,12 5,21"></polygon>
+            </svg>
+            Демо
+          </a>
+          <a href="#" class="project-modal-link" id="projectModalGithub" target="_blank" rel="noopener" data-i18n="viewCode">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            Код
+          </a>
+          <a href="#" class="project-modal-link" id="projectModalCase" target="_blank" rel="noopener" data-i18n="viewCase">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14,2 14,8 20,8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10,9 9,9 8,9"></polyline>
+            </svg>
+            Кейс
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container">
       <p data-i18n="footerCopyright">© 2025 Prometheus AI™. Все права защищены.</p>

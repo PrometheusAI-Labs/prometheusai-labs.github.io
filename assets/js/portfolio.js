@@ -17,6 +17,7 @@
     loadProjects();
     initFilters();
     initTVEffect();
+    initProjectModal();
   }
   
   // Загрузка проектов из JSON
@@ -73,6 +74,7 @@
     const card = document.createElement('div');
     card.className = 'portfolio-card';
     card.style.animationDelay = `${index * CONFIG.animationDelay}ms`;
+    card.setAttribute('data-project-id', project.id);
     
     // Формируем HTML карточки
     card.innerHTML = `
@@ -109,7 +111,34 @@
           `<span class="portfolio-card-link" data-i18n="viewCase">Кейс</span>`
         }
       </div>
+      
+      <div class="portfolio-card-expand">
+        <button class="portfolio-card-expand-btn" data-i18n="viewDetails" aria-label="Открыть детали проекта">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="M21 21l-4.35-4.35"></path>
+          </svg>
+          Подробнее
+        </button>
+      </div>
     `;
+    
+    // Добавляем обработчик клика для открытия модального окна
+    card.addEventListener('click', function(e) {
+      // Проверяем, что клик не по ссылке
+      if (!e.target.closest('a') && !e.target.closest('button')) {
+        openProjectModal(project);
+      }
+    });
+    
+    // Обработчик для кнопки "Подробнее"
+    const expandBtn = card.querySelector('.portfolio-card-expand-btn');
+    if (expandBtn) {
+      expandBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openProjectModal(project);
+      });
+    }
     
     return card;
   }
@@ -302,12 +331,118 @@
     }
   }
   
+  // Инициализация модального окна проекта
+  function initProjectModal() {
+    const modal = document.getElementById('projectModal');
+    const overlay = document.getElementById('projectModalOverlay');
+    const closeBtn = document.getElementById('projectModalClose');
+    
+    if (!modal || !overlay || !closeBtn) return;
+    
+    // Закрытие по клику на оверлей
+    overlay.addEventListener('click', closeProjectModal);
+    
+    // Закрытие по клику на кнопку закрытия
+    closeBtn.addEventListener('click', closeProjectModal);
+    
+    // Закрытие по нажатию Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeProjectModal();
+      }
+    });
+  }
+  
+  // Открытие модального окна проекта
+  function openProjectModal(project) {
+    const modal = document.getElementById('projectModal');
+    if (!modal) return;
+    
+    // Заполняем данные проекта
+    document.getElementById('projectModalCategory').textContent = getCategoryName(project.category);
+    document.getElementById('projectModalTitle').textContent = project.title;
+    document.getElementById('projectModalYear').textContent = project.year || '2024';
+    document.getElementById('projectModalClient').textContent = project.client || 'Конфиденциально';
+    document.getElementById('projectModalDescription').textContent = project.description;
+    document.getElementById('projectModalResultsText').textContent = project.results || 'Результаты не указаны';
+    
+    // Устанавливаем изображение
+    const image = document.getElementById('projectModalImage');
+    if (image && project.image) {
+      image.src = project.image;
+      image.alt = `Изображение проекта: ${project.title}`;
+    }
+    
+    // Заполняем технологии
+    const techList = document.getElementById('projectModalTechList');
+    if (techList && project.technologies) {
+      techList.innerHTML = project.technologies.map(tech => 
+        `<span class="project-modal-tech-item">${tech}</span>`
+      ).join('');
+    }
+    
+    // Настраиваем ссылки
+    const demoLink = document.getElementById('projectModalDemo');
+    const githubLink = document.getElementById('projectModalGithub');
+    const caseLink = document.getElementById('projectModalCase');
+    
+    if (demoLink) {
+      if (project.demo) {
+        demoLink.href = project.demo;
+        demoLink.style.display = 'flex';
+      } else {
+        demoLink.href = '#';
+        demoLink.style.display = 'flex';
+      }
+    }
+    
+    if (githubLink) {
+      if (project.github) {
+        githubLink.href = project.github;
+        githubLink.style.display = 'flex';
+      } else {
+        githubLink.href = '#';
+        githubLink.style.display = 'flex';
+      }
+    }
+    
+    if (caseLink) {
+      if (project.case) {
+        caseLink.href = project.case;
+        caseLink.style.display = 'flex';
+      } else {
+        caseLink.href = '#';
+        caseLink.style.display = 'flex';
+      }
+    }
+    
+    // Показываем модальное окно
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Фокус на кнопке закрытия для доступности
+    setTimeout(() => {
+      closeBtn.focus();
+    }, 100);
+  }
+  
+  // Закрытие модального окна проекта
+  function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    if (!modal) return;
+    
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   // Экспорт функций для внешнего использования
   window.PortfolioManager = {
     initPortfolio,
     searchProjects,
     filterProjects,
-    loadProjects
+    loadProjects,
+    openProjectModal,
+    closeProjectModal
   };
   
   // Инициализация при загрузке DOM
