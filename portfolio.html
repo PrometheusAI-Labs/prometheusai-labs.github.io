@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Портфолио проектов - Prometheus AI™</title>
+  <meta name="description" content="Портфолио проектов Prometheus AI™: примеры внедрения искусственного интеллекта в бизнес-процессы." />
+  <meta name="theme-color" content="#ff7a18" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/translations.js"></script>
+  <script defer src="./assets/js/main.js"></script>
+  <script defer src="./assets/js/portfolio.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html" data-i18n="brandAriaLabel" aria-label="Prometheus AI — на главную">
+        <span class="brand-mark">Prometheus</span> <span class="brand-accent">AI™</span>
+      </a>
+      <nav class="main-nav">
+        <a href="./index.html" data-i18n="navHome">Главная</a>
+        <a href="./portfolio.html" class="active" data-i18n="navPortfolio">Портфолио</a>
+      </nav>
+      <nav class="social" data-i18n="socialAriaLabel" aria-label="Социальные ссылки">
+        <a href="https://t.me/+ES3cQqvl6w83OGFi" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.linkedin.com/groups/14999039/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/PrometheusAI-Labs" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener" aria-disabled="true">YouTube</a>
+      </nav>
+      <div class="language-switcher">
+        <button class="lang-btn" id="langBtn" aria-label="Переключить язык">
+          <span class="lang-icon">🌐</span>
+          <span class="lang-text" data-i18n="langSwitch">Язык</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option" data-lang="ru" data-i18n="langRu">Русский</button>
+          <button class="lang-option" data-lang="en" data-i18n="langEn">English</button>
+          <button class="lang-option" data-lang="zh" data-i18n="langZh">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-content">
+        <h1 data-i18n="portfolioTitle">Портфолио проектов</h1>
+        <p class="lead" data-i18n="portfolioLead">Примеры внедрения искусственного интеллекта в бизнес-процессы наших клиентов.</p>
+      </div>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="container">
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="filterAll">Все проекты</button>
+          <button class="filter-btn" data-filter="automation" data-i18n="filterAutomation">Автоматизация</button>
+          <button class="filter-btn" data-filter="chatbots" data-i18n="filterChatbots">Чат-боты</button>
+          <button class="filter-btn" data-filter="ai-tools" data-i18n="filterAiTools">AI-инструменты</button>
+        </div>
+        
+        <div class="portfolio-grid" id="portfolioGrid">
+          <!-- Проекты будут загружены через JavaScript -->
+        </div>
+        
+        <div class="loading" id="loadingIndicator" data-i18n="loading">Загрузка проектов...</div>
+        <div class="error" id="errorMessage" style="display: none;" data-i18n="error">Ошибка загрузки проектов</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="footerCopyright">© 2025 Prometheus AI™. Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>
