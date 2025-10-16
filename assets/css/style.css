@@ -8,6 +8,11 @@
   --text-muted: #b5c0cf;
   --border: #242a33;
   --shadow: 0 8px 24px rgba(0,0,0,0.35);
+  --tv-overlay-beam: rgba(255,255,255,0.16);
+  --tv-overlay-focus: rgba(255,255,255,0.22);
+  --tv-overlay-falloff: rgba(255,255,255,0.38);
+  --tv-scanline-color: rgba(255,255,255,0.24);
+  --tv-scanline-opacity: 0.22;
 }
 
 html[data-theme="light"] {
@@ -19,6 +24,11 @@ html[data-theme="light"] {
   --text-muted: #4b5a6a;
   --border: #dfe5ec;
   --shadow: 0 8px 24px rgba(0,0,0,0.08);
+  --tv-overlay-beam: rgba(0,0,0,0.1);
+  --tv-overlay-focus: rgba(0,0,0,0.1);
+  --tv-overlay-falloff: rgba(0,0,0,0.3);
+  --tv-scanline-color: rgba(0,0,0,0.1);
+  --tv-scanline-opacity: 0.3;
 }
 
 * { box-sizing: border-box; }
@@ -718,8 +728,8 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%),
-    radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.3) 100%);
+    linear-gradient(90deg, transparent 0%, var(--tv-overlay-beam) 50%, transparent 100%),
+    radial-gradient(circle at center, transparent 0%, var(--tv-overlay-focus) 50%, var(--tv-overlay-falloff) 100%);
   pointer-events: none;
   z-index: 9999;
   opacity: 0;
@@ -741,8 +751,8 @@ body {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0,0,0,0.1) 2px,
-    rgba(0,0,0,0.1) 4px
+    var(--tv-scanline-color) 2px,
+    var(--tv-scanline-color) 4px
   );
   pointer-events: none;
   z-index: 10000;
@@ -751,7 +761,7 @@ body {
 }
 
 .tv-scanlines.active {
-  opacity: 0.3;
+  opacity: var(--tv-scanline-opacity);
 }
 
 @keyframes scanlines {
