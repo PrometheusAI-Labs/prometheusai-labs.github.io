@@ -157,5 +157,6 @@
     "year": 2024,
     "client": "Бухгалтерская фирма",
     "results": "Сокращение времени подготовки отчетов с недель до часов, точность 99.5%"
-  }
+  },
+  {"id": 9, "title": "Video to Text Converter", "description": "CLI-утилита на Python, которая извлекает аудио из видео через ffmpeg и транскрибирует его с помощью AssemblyAI или whisper-cli, сохраняя текст рядом с исходным файлом.", "category": "speech-to-text", "technologies": ["Python", "ffmpeg", "AssemblyAI", "whisper-cli", "toml"], "demo": null, "github": null, "case": null, "image": null, "year": 2024, "client": "Внутренний проект PrometheusAI", "results": "Автоматизирует пакетную обработку видео и получение транскриптов с настраиваемыми параметрами аудио и движка распознавания."}
 ]
